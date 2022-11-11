@@ -29,6 +29,25 @@ while (!includeUpCase && !includeLowCase && !includeNum && !includeSym) {
   includeNum = confirm("click ok if you would like to include numbers");
   includeSym = confirm("click ok if you would like to include symbols");
 }
+// adding criteria to password array
+if (includeLowCase) {
+  charArray = charArray.concat(lowerCase);
+}
+if (includeUpCase) {
+  charArray = charArray.concat(upperCase);
+}
+if (includeNum) {
+  charArray = charArray.concat(number);
+} 
+if (includeSym) {
+  charArray = charArray.concat(symbol);
+}
+//looping through new password array intil desired password length
+for (i = 0; i < charLength; i++) {
+  let index = Math.floor(Math.random() * charArray.length)
+  generatedPass = generatedPass + charArray[index];
+}
+return generatedPass;
 
 
 }
